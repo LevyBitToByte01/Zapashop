@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZapaShop | Zapatería Online</title>
+  <meta name="description" content="Tienda online de zapatos con catálogo, filtros, carrito, ubicaciones y sección sobre nosotros." />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="#inicio" class="brand" aria-label="Ir al inicio">
+        <span class="brand-icon">
+          <i data-lucide="shopping-bag"></i>
+        </span>
+        <span>ZapaShop</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#ubicaciones">Ubicaciones</a>
+        <a href="#nosotros">Nosotros</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" id="openSearchBtn" type="button" aria-label="Buscar">
+          <i data-lucide="search"></i>
+        </button>
+
+        <button class="cart-button" id="openCartBtn" type="button" aria-label="Abrir carrito">
+          <i data-lucide="shopping-cart"></i>
+          <span id="cartCount">0</span>
+        </button>
+
+        <div class="header-auth" id="headerAuth">
+          <span class="guest-label" id="userStatusLabel">Invitado</span>
+          <button class="login-button login-outline" id="openLoginBtn" type="button">
+            <span>Iniciar Sesión</span>
+          </button>
+          <button class="register-button" id="openRegisterBtn" type="button">
+            <span>Registrarse</span>
+          </button>
+        </div>
+
+        <button class="menu-button" id="openMenuBtn" type="button" aria-label="Abrir menú">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#ubicaciones">Ubicaciones</a>
+      <a href="#nosotros">Nosotros</a>
+      <div class="mobile-auth-actions">
+        <button class="login-button login-outline" id="openLoginBtnMobile" type="button">Iniciar Sesión</button>
+        <button class="register-button" id="openRegisterBtnMobile" type="button">Registrarse</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Nueva temporada 2026</p>
+          <h1>Encuentra el calzado perfecto para cada paso.</h1>
+          <p class="hero-description">
+            Explora sneakers, botas, deportivos, tacones y modelos casuales con una experiencia de compra rápida, limpia y funcional.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#catalogo" class="primary-link">Explorar catálogo</a>
+            <a href="#ubicaciones" class="secondary-link">Ver ubicaciones</a>
+          </div>
+
+          <div class="hero-stats" aria-label="Indicadores de tienda">
+            <div>
+              <strong>+120</strong>
+              <span>modelos</span>
+            </div>
+            <div>
+              <strong>24h</strong>
+              <span>envíos demo</span>
+            </div>
+            <div>
+              <strong>4.8</strong>
+              <span>calificación</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="discount-badge">-30%</div>
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80" alt="Tenis rojos de temporada" />
+          <div class="hero-product-info">
+            <div>
+              <p>Producto destacado</p>
+              <h2>Air Urban Red</h2>
+            </div>
+            <strong>$1,699</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container benefits-grid">
+        <article>
+          <i data-lucide="truck"></i>
+          <h3>Entrega rápida</h3>
+          <p>Proceso de compra demo listo para integrarse a un backend.</p>
+        </article>
+        <article>
+          <i data-lucide="shield-check"></i>
+          <h3>Compra segura</h3>
+          <p>Interfaz preparada para formularios, validación y confirmación.</p>
+        </article>
+        <article>
+          <i data-lucide="rotate-ccw"></i>
+          <h3>Cambios sencillos</h3>
+          <p>Carrito editable con cantidades y eliminación de productos.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="categories" id="categorias">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Compra por estilo</p>
+          <h2>Categorías populares</h2>
+        </div>
+
+        <div class="category-grid" id="categoryCards">
+          <button class="category-card active" type="button" data-category="Todos">
+            <i data-lucide="sparkles"></i>
+            <span>Todos</span>
+          </button>
+          <button class="category-card" type="button" data-category="Sneakers">
+            <i data-lucide="footprints"></i>
+            <span>Sneakers</span>
+          </button>
+          <button class="category-card" type="button" data-category="Botas">
+            <i data-lucide="mountain"></i>
+            <span>Botas</span>
+          </button>
+          <button class="category-card" type="button" data-category="Deportivos">
+            <i data-lucide="dumbbell"></i>
+            <span>Deportivos</span>
+          </button>
+          <button class="category-card" type="button" data-category="Tacones">
+            <i data-lucide="gem"></i>
+            <span>Tacones</span>
+          </button>
+          <button class="category-card" type="button" data-category="Casuales">
+            <i data-lucide="coffee"></i>
+            <span>Casuales</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalogo">
+      <div class="container">
+        <div class="section-heading catalog-heading">
+          <div>
+            <p class="eyebrow">Catálogo</p>
+            <h2>Nuestros productos</h2>
+          </div>
+          <p id="resultCount" class="result-count">0 productos</p>
+        </div>
+
+        <div class="filters-panel">
+          <label class="search-box" for="searchInput">
+            <i data-lucide="search"></i>
+            <input id="searchInput" type="search" placeholder="Buscar por producto, marca o categoría..." />
+          </label>
+
+          <select id="categoryFilter" aria-label="Filtrar por categoría">
+            <option value="Todos">Todas las categorías</option>
+            <option value="Sneakers">Sneakers</option>
+            <option value="Botas">Botas</option>
+            <option value="Deportivos">Deportivos</option>
+            <option value="Tacones">Tacones</option>
+            <option value="Casuales">Casuales</option>
+          </select>
+
+          <select id="sortFilter" aria-label="Ordenar productos">
+            <option value="featured">Ordenar: destacados</option>
+            <option value="price-low">Precio: menor a mayor</option>
+            <option value="price-high">Precio: mayor a menor</option>
+            <option value="rating">Mejor calificados</option>
+            <option value="name">Nombre A-Z</option>
+          </select>
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+
+        <div class="empty-state hidden" id="emptyState">
+          <i data-lucide="package-search"></i>
+          <h3>No encontramos productos</h3>
+          <p>Intenta con otra búsqueda o cambia la categoría seleccionada.</p>
+          <button class="primary-button" id="clearFiltersBtn" type="button">Limpiar filtros</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="locations-section" id="ubicaciones">
+      <div class="container">
+        <div class="section-heading centered-heading">
+          <h2>Nuestras Sucursales</h2>
+          <p>Visítanos en cualquiera de nuestras ubicaciones y descubre la mejor colección de zapatos</p>
+        </div>
+
+        <div class="locations-grid">
+          <article class="location-card center-card">
+            <div class="location-title">
+              <span class="location-icon purple">
+                <i data-lucide="map-pin"></i>
+              </span>
+              <h3>Sucursal Centro</h3>
+            </div>
+            <ul class="location-list">
+              <li><i data-lucide="map-pinned"></i><span>Av. Reforma 123, Col. Centro, CDMX, C.P. 06000</span></li>
+              <li><i data-lucide="phone"></i><span>+52 55 1234 5678</span></li>
+              <li><i data-lucide="mail"></i><span>centro@zapashop.com</span></li>
+              <li><i data-lucide="clock-3"></i><span>Lun - Vie: 9:00 - 20:00<br>Sáb - Dom: 10:00 - 18:00</span></li>
+            </ul>
+          </article>
+
+          <article class="location-card polanco-card">
+            <div class="location-title">
+              <span class="location-icon pink">
+                <i data-lucide="map-pin"></i>
+              </span>
+              <h3>Sucursal Polanco</h3>
+            </div>
+            <ul class="location-list">
+              <li><i data-lucide="map-pinned"></i><span>Av. Presidente Masaryk 456, Polanco, CDMX, C.P. 11560</span></li>
+              <li><i data-lucide="phone"></i><span>+52 55 2345 6789</span></li>
+              <li><i data-lucide="mail"></i><span>polanco@zapashop.com</span></li>
+              <li><i data-lucide="clock-3"></i><span>Lun - Vie: 10:00 - 21:00<br>Sáb - Dom: 11:00 - 19:00</span></li>
+            </ul>
+          </article>
+
+          <article class="location-card santa-card">
+            <div class="location-title">
+              <span class="location-icon green">
+                <i data-lucide="map-pin"></i>
+              </span>
+              <h3>Sucursal Santa Fe</h3>
+            </div>
+            <ul class="location-list">
+              <li><i data-lucide="map-pinned"></i><span>Centro Comercial Santa Fe, Av. Vasco de Quiroga 3800, CDMX, C.P. 05109</span></li>
+              <li><i data-lucide="phone"></i><span>+52 55 3456 7890</span></li>
+              <li><i data-lucide="mail"></i><span>santafe@zapashop.com</span></li>
+              <li><i data-lucide="clock-3"></i><span>Lun - Dom: 11:00 - 21:00</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="nosotros">
+      <div class="container">
+        <div class="section-heading centered-heading">
+          <h2>Sobre Nosotros</h2>
+          <p>Más de 20 años llevando estilo y comodidad a tus pies</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="history-card">
+            <h3>Nuestra Historia</h3>
+            <p>
+              ZapaShop nació en 2006 con un sueño simple: ofrecer zapatos de calidad excepcional que combinen estilo, comodidad y durabilidad. Lo que comenzó como una pequeña tienda familiar en el centro de la ciudad, se ha convertido en una cadena de sucursales reconocida por su excelencia y atención al cliente.
+            </p>
+            <p>
+              A lo largo de estos años, hemos crecido junto a nuestros clientes, escuchando sus necesidades y adaptándonos a las tendencias del mercado sin perder nuestra esencia: zapatos de calidad a precios justos.
+            </p>
+            <p>
+              Hoy contamos con tres sucursales estratégicamente ubicadas en la Ciudad de México, un catálogo de más de 500 modelos diferentes y un equipo de más de 50 colaboradores apasionados por el servicio al cliente.
+            </p>
+          </article>
+
+          <article class="about-stats-card">
+            <div class="about-stat-item">
+              <strong>20+</strong>
+              <span>Años de experiencia</span>
+            </div>
+            <div class="about-stat-item">
+              <strong>3</strong>
+              <span>Sucursales en CDMX</span>
+            </div>
+            <div class="about-stat-item">
+              <strong>50K+</strong>
+              <span>Clientes satisfechos</span>
+            </div>
+            <div class="about-stat-item">
+              <strong>500+</strong>
+              <span>Modelos diferentes</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar-card">
+            <span class="pillar-icon purple-soft"><i data-lucide="badge-check"></i></span>
+            <h3>Nuestra Misión</h3>
+            <p>Proveer calzado de calidad superior que combine estilo, comodidad y durabilidad, superando las expectativas de nuestros clientes en cada compra.</p>
+          </article>
+          <article class="pillar-card">
+            <span class="pillar-icon pink-soft"><i data-lucide="eye"></i></span>
+            <h3>Nuestra Visión</h3>
+            <p>Ser la cadena de zapaterías más reconocida y confiable de México, expandiendo nuestra presencia a nivel nacional mientras mantenemos nuestros valores de calidad y servicio.</p>
+          </article>
+          <article class="pillar-card">
+            <span class="pillar-icon green-soft"><i data-lucide="sparkles"></i></span>
+            <h3>Nuestros Valores</h3>
+            <p>Calidad, honestidad, innovación y compromiso con nuestros clientes. Cada decisión que tomamos está guiada por estos principios fundamentales.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">Tu selección</p>
+        <h2>Carrito</h2>
+      </div>
+      <button class="icon-button" id="closeCartBtn" type="button" aria-label="Cerrar carrito">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-empty" id="cartEmpty">
+      <i data-lucide="shopping-cart"></i>
+      <h3>Tu carrito está vacío</h3>
+      <p>Agrega productos desde el catálogo.</p>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">$0.00</strong>
+      </div>
+      <div class="cart-total-row small">
+        <span>Envío</span>
+        <span id="shippingCost">Gratis</span>
+      </div>
+      <div class="cart-total-row grand-total">
+        <span>Total</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="primary-button" id="checkoutBtn" type="button">Finalizar compra</button>
+      <button class="ghost-button" id="clearCartBtn" type="button">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <dialog class="modal" id="loginModal">
+    <button class="modal-close" id="closeLoginBtn" type="button" aria-label="Cerrar">
+      <i data-lucide="x"></i>
+    </button>
+
+    <div class="modal-icon">
+      <i data-lucide="user-round"></i>
+    </div>
+
+    <h2>Bienvenido</h2>
+    <p>Ingresa tus datos para continuar. Este login es demostrativo.</p>
+
+    <form id="loginForm" class="form">
+      <label>
+        Correo electrónico
+        <input type="email" id="loginEmail" placeholder="tu@email.com" required />
+      </label>
+      <label>
+        Contraseña
+        <input type="password" id="loginPassword" placeholder="••••••••" required minlength="4" />
+      </label>
+      <button type="submit" class="primary-button">Iniciar sesión</button>
+    </form>
+  </dialog>
+
+
+
+  <dialog class="modal" id="registerModal">
+    <button class="modal-close" id="closeRegisterBtn" type="button" aria-label="Cerrar">
+      <i data-lucide="x"></i>
+    </button>
+
+    <div class="modal-icon">
+      <i data-lucide="user-plus"></i>
+    </div>
+
+    <h2>Crear cuenta</h2>
+    <p>Regístrate para comprar, guardar tu sesión y continuar dentro de ZapaShop.</p>
+
+    <form id="registerForm" class="form">
+      <label>
+        Nombre completo
+        <input type="text" id="registerName" placeholder="Tu nombre completo" required />
+      </label>
+      <label>
+        Correo electrónico
+        <input type="email" id="registerEmail" placeholder="tu@email.com" required />
+      </label>
+      <label>
+        Teléfono
+        <input type="tel" id="registerPhone" placeholder="5512345678" required />
+      </label>
+      <label>
+        Contraseña
+        <input type="password" id="registerPassword" placeholder="Mínimo 6 caracteres" minlength="6" required />
+      </label>
+      <label>
+        Confirmar contraseña
+        <input type="password" id="registerPasswordConfirm" placeholder="Repite tu contraseña" minlength="6" required />
+      </label>
+      <button type="submit" class="primary-button">Registrarse</button>
+    </form>
+  </dialog>
+
+  <dialog class="modal product-modal" id="productModal">
+    <button class="modal-close" id="closeProductBtn" type="button" aria-label="Cerrar">
+      <i data-lucide="x"></i>
+    </button>
+    <div id="productDetail"></div>
+  </dialog>
+
+  <dialog class="modal" id="checkoutModal">
+    <button class="modal-close" id="closeCheckoutBtn" type="button" aria-label="Cerrar">
+      <i data-lucide="x"></i>
+    </button>
+    <div class="modal-icon success">
+      <i data-lucide="check"></i>
+    </div>
+    <h2>Pedido confirmado</h2>
+    <p id="checkoutMessage">Tu compra demo fue registrada correctamente.</p>
+    <button class="primary-button" id="finishCheckoutBtn" type="button">Aceptar</button>
+  </dialog>
+
+  
+  <dialog class="modal admin-modal" id="adminModal">
+    <div class="admin-shell">
+      <aside class="admin-sidebar">
+        <div class="admin-sidebar-top">
+          <div class="admin-brand-block">
+            <p class="eyebrow">Administración</p>
+            <h2>ZapaShop Admin</h2>
+            <p class="admin-sidebar-text">Panel de control del catálogo, ventas y demanda de productos.</p>
+          </div>
+
+          <div class="admin-status-chip">
+            <i data-lucide="shield-check"></i>
+            <span>Sesión activa</span>
+          </div>
+
+          <nav class="admin-nav">
+            <button class="admin-tab active" id="adminTabDashboard" type="button">
+              <i data-lucide="layout-dashboard"></i>
+              <span>Estadísticas</span>
+            </button>
+            <button class="admin-tab" id="adminTabCrud" type="button">
+              <i data-lucide="package-plus"></i>
+              <span>Manejo de productos</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="admin-sidebar-bottom">
+          <div class="admin-sidebar-help">
+            <h3>Área protegida</h3>
+            <p>Usa este panel únicamente para gestionar catálogo, inventario y ventas.</p>
+          </div>
+        </div>
+      </aside>
+
+      <section class="admin-main">
+        <header class="admin-topbar">
+          <div>
+            <p class="eyebrow">Panel de administrador</p>
+            <h2>Gestión operativa de ZapaShop</h2>
+            <p>Consulta métricas del negocio, edita productos y administra el catálogo en tiempo real.</p>
+          </div>
+
+          <div class="admin-topbar-actions">
+            <button class="ghost-button admin-topbar-logout" id="adminLogoutBtn" type="button">
+              <i data-lucide="log-out"></i>
+              <span>Cerrar sesión</span>
+            </button>
+            <button class="icon-button admin-close-btn" id="closeAdminBtn" type="button" aria-label="Cerrar panel de administrador">
+              <i data-lucide="x"></i>
+            </button>
+          </div>
+        </header>
+
+        <div class="admin-content-scroll">
+          <section class="admin-view" id="adminDashboardView">
+            <div class="admin-stats-grid">
+              <article class="admin-stat-card">
+                <span>Productos activos</span>
+                <strong id="adminTotalProducts">0</strong>
+                <small>Catálogo disponible</small>
+              </article>
+              <article class="admin-stat-card">
+                <span>Stock total</span>
+                <strong id="adminTotalStock">0</strong>
+                <small>Unidades en sistema</small>
+              </article>
+              <article class="admin-stat-card">
+                <span>Órdenes registradas</span>
+                <strong id="adminOrdersCount">0</strong>
+                <small>Compras confirmadas</small>
+              </article>
+              <article class="admin-stat-card">
+                <span>Unidades vendidas</span>
+                <strong id="adminUnitsSold">0</strong>
+                <small>Volumen de salida</small>
+              </article>
+              <article class="admin-stat-card admin-stat-card-wide">
+                <span>Ingresos estimados</span>
+                <strong id="adminRevenue">$0.00</strong>
+                <small>Acumulado por ventas finalizadas</small>
+              </article>
+            </div>
+
+            <div class="admin-dashboard-grid">
+              <article class="admin-demand-panel">
+                <div class="admin-panel-heading">
+                  <h3>Productos más demandados</h3>
+                  <p>Ranking calculado con las compras finalizadas.</p>
+                </div>
+                <div id="adminDemandList" class="admin-demand-list"></div>
+              </article>
+
+              <article class="admin-insight-panel">
+                <div class="admin-panel-heading">
+                  <h3>Resumen del panel</h3>
+                  <p>Monitorea rápidamente el estado general del negocio.</p>
+                </div>
+
+                <div class="admin-insight-cards">
+                  <div class="admin-insight-card">
+                    <i data-lucide="badge-dollar-sign"></i>
+                    <div>
+                      <strong>Control de ingresos</strong>
+                      <span>Visualiza el acumulado generado por las compras realizadas.</span>
+                    </div>
+                  </div>
+
+                  <div class="admin-insight-card">
+                    <i data-lucide="boxes"></i>
+                    <div>
+                      <strong>Inventario centralizado</strong>
+                      <span>Actualiza stock, precio y catálogo desde un solo panel.</span>
+                    </div>
+                  </div>
+
+                  <div class="admin-insight-card">
+                    <i data-lucide="chart-column-big"></i>
+                    <div>
+                      <strong>Toma de decisiones</strong>
+                      <span>Identifica los productos de mayor salida para priorizar surtido.</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="admin-view hidden" id="adminCrudView">
+            <div class="admin-crud-grid">
+              <article class="admin-form-card">
+                <div class="admin-panel-heading">
+                  <h3 id="adminFormTitle">Nuevo producto</h3>
+                  <p>Completa los datos para agregar o editar un producto.</p>
+                </div>
+
+                <form id="adminProductForm" class="admin-form">
+                  <input type="hidden" id="adminEditingId" />
+
+                  <label>
+                    Nombre *
+                    <input type="text" id="adminName" required />
+                  </label>
+
+                  <div class="admin-form-grid">
+                    <label>
+                      Marca *
+                      <input type="text" id="adminBrand" required />
+                    </label>
+                    <label>
+                      Categoría *
+                      <select id="adminCategory" required>
+                        <option value="Sneakers">Sneakers</option>
+                        <option value="Botas">Botas</option>
+                        <option value="Deportivos">Deportivos</option>
+                        <option value="Tacones">Tacones</option>
+                        <option value="Casuales">Casuales</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <div class="admin-form-grid">
+                    <label>
+                      Precio *
+                      <input type="number" id="adminPrice" min="1" step="1" required />
+                    </label>
+                    <label>
+                      Rating *
+                      <input type="number" id="adminRating" min="0" max="5" step="0.1" required />
+                    </label>
+                  </div>
+
+                  <div class="admin-form-grid">
+                    <label>
+                      Stock *
+                      <input type="number" id="adminStock" min="0" step="1" required />
+                    </label>
+                    <label>
+                      URL de imagen *
+                      <input type="url" id="adminImageUrl" required />
+                    </label>
+                  </div>
+
+                  <div class="admin-form-grid">
+                    <label>
+                      Tallas (separadas por coma) *
+                      <input type="text" id="adminSizes" placeholder="24,25,26,27" required />
+                    </label>
+                    <label>
+                      Colores (separados por coma) *
+                      <input type="text" id="adminColors" placeholder="Negro,Blanco,Azul" required />
+                    </label>
+                  </div>
+
+                  <label>
+                    Descripción *
+                    <textarea id="adminDescription" rows="4" required></textarea>
+                  </label>
+
+                  <div class="admin-form-actions">
+                    <button class="primary-button" type="submit" id="adminSaveBtn">Guardar producto</button>
+                    <button class="ghost-button" type="button" id="adminCancelEditBtn">Cancelar</button>
+                  </div>
+                </form>
+              </article>
+
+              <article class="admin-table-card">
+                <div class="admin-panel-heading">
+                  <h3>Listado y control de productos</h3>
+                  <p>Edita o elimina productos desde esta tabla.</p>
+                </div>
+
+                <div class="admin-table-wrap">
+                  <table class="admin-table">
+                    <thead>
+                      <tr>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Rating</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody id="adminProductsTableBody"></tbody>
+                  </table>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </dialog>
+
+
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#inicio" class="brand footer-brand">
+          <span class="brand-icon">
+            <i data-lucide="shopping-bag"></i>
+          </span>
+          <span>ZapaShop</span>
+        </a>
+        <p>Tienda demo de zapatería creada con HTML, CSS y JavaScript.</p>
+      </div>
+      <div>
+        <h3>Secciones</h3>
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#ubicaciones">Ubicaciones</a>
+        <a href="#nosotros">Nosotros</a>
+      </div>
+      <div>
+        <h3>Información</h3>
+        <p>ventas@zapashop.com</p>
+        <p>Ciudad de México, MX</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 ZapaShop. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

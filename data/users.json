@@ -1,0 +1,38 @@
+[
+  {
+    "id": "f31ffbb22b661fdcb9f73376",
+    "name": "Administrador ZapaShop",
+    "email": "admin@zapashop.com",
+    "phone": "0000000000",
+    "role": "admin",
+    "passwordHash": "29bb0f11ef41ade46a71fabf33f5552971cc9ceb02d763f5d3b1d3be0d07d2284baae6f7a88ea5c32a87c077eafa5bb56bd144b3e123746c162f5402387f3757",
+    "createdAt": "2026-05-06T19:51:12.672Z"
+  },
+  {
+    "id": "1e28d34a546c6437b3950a3e",
+    "name": "Regina Diaz",
+    "email": "r@gmail.com",
+    "phone": "5544782379",
+    "role": "user",
+    "passwordHash": "e3982d9f4a478adc16764d8151c7175ca3d494cfb29ccbf09fc05e4b5f0c30550cb68d894788f08baeb94104db924b73be0966c2d4eac02ed8562a6d30de9262",
+    "createdAt": "2026-05-06T19:52:10.355Z"
+  },
+  {
+    "id": "ffff70cce57ecbae0656d192",
+    "name": "pepe",
+    "email": "p@gmail.com",
+    "phone": "554454776",
+    "role": "user",
+    "passwordHash": "c2807d0d6a3dafd700c5e060bcbbf7f0441e6ffc6bea6f30b58332e99cea3d674883fca7d64610cecf9615b5eb141cac8268c0d93d961dbd7b80d2f8704feae4",
+    "createdAt": "2026-05-06T20:42:10.277Z"
+  },
+  {
+    "id": "75cde5a7e6f13d03546c27f1",
+    "name": "yair",
+    "email": "levy@gmail.com",
+    "phone": "123456789",
+    "role": "user",
+    "passwordHash": "c4cc6384d551a1e3259be139e590d80c78cdbf9cbdc2487ccd971232ed4b84dd32821526ea152c2318a968ef232703f6952a6c867a882c9a76c587528fb419ae",
+    "createdAt": "2026-06-08T23:40:29.838Z"
+  }
+]
